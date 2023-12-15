@@ -452,7 +452,7 @@ var shoppingCart = CartYesOrNo()
 while controller.finish == false {
     controller.showPages.choiceDisplay()
     controller.showPages.commandInput()
-}   // 프로그램의 실행/종료 여부 판단하는 구문이었으나, 종료되는 조건X
+}   // 프로그램의 실행/종료 여부 판단하는 구문이었으나, 종료되는 조건은 없음
 
 
 // 문제점
