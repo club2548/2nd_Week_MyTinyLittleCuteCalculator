@@ -14,6 +14,7 @@
 		3F1E6CE02B284A2E006B34F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1E6CDF2B284A2E006B34F2 /* Assets.xcassets */; };
 		3F1E6CE32B284A2E006B34F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F1E6CE12B284A2E006B34F2 /* LaunchScreen.storyboard */; };
 		3F9B4EB52B2C070100355FC7 /* TodoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B4EB42B2C070100355FC7 /* TodoListCell.swift */; };
+		3F9B4EB72B3020BC00355FC7 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B4EB62B3020BC00355FC7 /* Todo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3F1E6CE22B284A2E006B34F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F1E6CE42B284A2E006B34F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F9B4EB42B2C070100355FC7 /* TodoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListCell.swift; sourceTree = "<group>"; };
+		3F9B4EB62B3020BC00355FC7 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +62,10 @@
 			children = (
 				3F1E6CD62B284A2D006B34F2 /* AppDelegate.swift */,
 				3F1E6CD82B284A2D006B34F2 /* SceneDelegate.swift */,
+				3F9B4EB62B3020BC00355FC7 /* Todo.swift */,
 				3F1E6CDA2B284A2D006B34F2 /* ViewController.swift */,
-				3F1E6CDC2B284A2D006B34F2 /* Main.storyboard */,
 				3F9B4EB42B2C070100355FC7 /* TodoListCell.swift */,
+				3F1E6CDC2B284A2D006B34F2 /* Main.storyboard */,
 				3F1E6CDF2B284A2E006B34F2 /* Assets.xcassets */,
 				3F1E6CE12B284A2E006B34F2 /* LaunchScreen.storyboard */,
 				3F1E6CE42B284A2E006B34F2 /* Info.plist */,
@@ -145,6 +148,7 @@
 				3F1E6CD72B284A2D006B34F2 /* AppDelegate.swift in Sources */,
 				3F1E6CD92B284A2D006B34F2 /* SceneDelegate.swift in Sources */,
 				3F9B4EB52B2C070100355FC7 /* TodoListCell.swift in Sources */,
+				3F9B4EB72B3020BC00355FC7 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

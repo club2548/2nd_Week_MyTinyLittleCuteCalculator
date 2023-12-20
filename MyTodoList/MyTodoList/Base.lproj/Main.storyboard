@@ -29,31 +29,37 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoListCell" id="kM4-Bg-yTE" customClass="TodoListCell" customModule="MyTodoList" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="44.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="42.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kM4-Bg-yTE" id="Kiu-FT-HuW">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="44.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="42.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ri-0C-fnC">
-                                                    <rect key="frame" x="40" y="12" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ri-0C-fnC">
+                                                    <rect key="frame" x="40" y="11.000000000000002" width="284" height="20.666666666666671"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3lL-bP-u92">
-                                                    <rect key="frame" x="324" y="7" width="51" height="31"/>
+                                                    <rect key="frame" x="324" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="valueChanged:" destination="kM4-Bg-yTE" eventType="valueChanged" id="uFe-ga-pii"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="2ri-0C-fnC" firstAttribute="centerY" secondItem="Kiu-FT-HuW" secondAttribute="centerY" id="CDN-JH-pud"/>
+                                                <constraint firstItem="3lL-bP-u92" firstAttribute="leading" secondItem="2ri-0C-fnC" secondAttribute="trailing" id="16g-AJ-8tJ"/>
+                                                <constraint firstItem="2ri-0C-fnC" firstAttribute="top" secondItem="Kiu-FT-HuW" secondAttribute="topMargin" id="JmW-4q-Ou6"/>
+                                                <constraint firstItem="2ri-0C-fnC" firstAttribute="centerY" secondItem="Kiu-FT-HuW" secondAttribute="centerY" id="KuC-dd-eFo"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="2ri-0C-fnC" secondAttribute="bottom" id="b3g-gF-gU5"/>
                                                 <constraint firstItem="2ri-0C-fnC" firstAttribute="leading" secondItem="Kiu-FT-HuW" secondAttribute="leadingMargin" constant="20" id="fJG-0r-0xZ"/>
-                                                <constraint firstAttribute="trailing" secondItem="3lL-bP-u92" secondAttribute="trailing" constant="20" id="qeK-Hc-8I1"/>
                                                 <constraint firstItem="3lL-bP-u92" firstAttribute="centerY" secondItem="Kiu-FT-HuW" secondAttribute="centerY" id="sY2-FL-cew"/>
+                                                <constraint firstAttribute="trailing" secondItem="3lL-bP-u92" secondAttribute="trailing" constant="20" symbolic="YES" id="x0y-b9-f3T"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="completeSwitch" destination="3lL-bP-u92" id="rfz-l1-WOR"/>
+                                            <outlet property="completeSwitch" destination="3lL-bP-u92" id="Auk-qE-6s3"/>
                                             <outlet property="title" destination="2ri-0C-fnC" id="Hod-Pb-qPn"/>
                                         </connections>
                                     </tableViewCell>
