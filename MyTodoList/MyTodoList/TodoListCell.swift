@@ -20,7 +20,7 @@ class TodoListCell: UITableViewCell {
         updateChecked()
     }
     
-    // 이 메소드는 커스텀셀에서 todos: [Todo]에 접근해 title과 completeSwitch로 값을 가져오고, UISwitch의 상태에 따라 취소선을 반영하기 위해 사용
+    // 이 메소드는 커스텀셀에서 todos: [Todo]에 접근해 title과 isComplete의 값을 가져오고, UISwitch의 상태에 따라 취소선을 반영하기 위해 사용
     func set(todoTitle: String, valueChanged: Bool) {
         title.text = todoTitle
         completeSwitch.isOn = valueChanged
@@ -38,14 +38,4 @@ class TodoListCell: UITableViewCell {
         }
         title.attributedText = attributedString
     }
-    
-
 }
-
-//extension String {
-//    func strikeThrough() -> NSAttributedString {
-//        let attributeString = NSMutableAttributedString(string: self)
-//        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, attributeString.length))
-//        return attributeString
-//    }
-//}
