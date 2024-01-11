@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F6E18462B3C065C00107AF1 /* SideMenus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E18452B3C065C00107AF1 /* SideMenus.swift */; };
+		3F6E18482B3C069200107AF1 /* DrinkMenus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E18472B3C069100107AF1 /* DrinkMenus.swift */; };
+		3F6E18502B3C40AF00107AF1 /* LotteriaMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E184F2B3C40AF00107AF1 /* LotteriaMenu.swift */; };
+		3F9B4EC52B3A972400355FC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B4EC42B3A972400355FC7 /* AppDelegate.swift */; };
+		3F9B4EC72B3A972400355FC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B4EC62B3A972400355FC7 /* SceneDelegate.swift */; };
+		3F9B4EC92B3A972400355FC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B4EC82B3A972400355FC7 /* ViewController.swift */; };
+		3F9B4ECC2B3A972400355FC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9B4ECA2B3A972400355FC7 /* Main.storyboard */; };
+		3F9B4ECE2B3A972700355FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F9B4ECD2B3A972700355FC7 /* Assets.xcassets */; };
+		3F9B4ED12B3A972700355FC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9B4ECF2B3A972700355FC7 /* LaunchScreen.storyboard */; };
+		3F9B4EDF2B3AFD5100355FC7 /* HamburgerMenus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B4EDE2B3AFD5100355FC7 /* HamburgerMenus.swift */; };
+		3F9B4EE12B3AFEA400355FC7 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9B4EE02B3AFEA400355FC7 /* MyCollectionViewCell.swift */; };
+		3FF8A3152B3DA72000856634 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8A3142B3DA72000856634 /* CategoryViewController.swift */; };
+		3FF8A3282B439CED00856634 /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8A3272B439CED00856634 /* CollectionViewExtension.swift */; };
+		3FF8A32A2B439CFB00856634 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8A3292B439CFB00856634 /* TableViewExtension.swift */; };
+		3FF8A32E2B43A2E300856634 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8A32D2B43A2E300856634 /* MyTableViewCell.swift */; };
+		3FF8A3302B43B15500856634 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8A32F2B43B15500856634 /* CartCell.swift */; };
+		3FF8A3322B43C98500856634 /* CategoryBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8A3312B43C98500856634 /* CategoryBar.swift */; };
+		3FF8A3342B43EF3400856634 /* RotatingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF8A3332B43EF3400856634 /* RotatingImageView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3F6E18452B3C065C00107AF1 /* SideMenus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SideMenus.swift; path = LotteriaKiosk/Model/SideMenus.swift; sourceTree = SOURCE_ROOT; };
+		3F6E18472B3C069100107AF1 /* DrinkMenus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DrinkMenus.swift; path = LotteriaKiosk/Model/DrinkMenus.swift; sourceTree = SOURCE_ROOT; };
+		3F6E184F2B3C40AF00107AF1 /* LotteriaMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LotteriaMenu.swift; sourceTree = "<group>"; };
+		3F9B4EC12B3A972400355FC7 /* LotteriaKiosk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LotteriaKiosk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F9B4EC42B3A972400355FC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3F9B4EC62B3A972400355FC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3F9B4EC82B3A972400355FC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F9B4ECB2B3A972400355FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3F9B4ECD2B3A972700355FC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3F9B4ED02B3A972700355FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3F9B4ED22B3A972700355FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F9B4EDE2B3AFD5100355FC7 /* HamburgerMenus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenus.swift; sourceTree = "<group>"; };
+		3F9B4EE02B3AFEA400355FC7 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		3FF8A3142B3DA72000856634 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryViewController.swift; path = LotteriaKiosk/CategoryViewController.swift; sourceTree = SOURCE_ROOT; };
+		3FF8A3272B439CED00856634 /* CollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtension.swift; sourceTree = "<group>"; };
+		3FF8A3292B439CFB00856634 /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
+		3FF8A32D2B43A2E300856634 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyTableViewCell.swift; path = ../../MyTableViewCell.swift; sourceTree = "<group>"; };
+		3FF8A32F2B43B15500856634 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
+		3FF8A3312B43C98500856634 /* CategoryBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryBar.swift; sourceTree = "<group>"; };
+		3FF8A3332B43EF3400856634 /* RotatingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingImageView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F9B4EBE2B3A972400355FC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F9B4EB82B3A972400355FC7 = {
+			isa = PBXGroup;
+			children = (
+				3F9B4EC32B3A972400355FC7 /* LotteriaKiosk */,
+				3F9B4EC22B3A972400355FC7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3F9B4EC22B3A972400355FC7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F9B4EC12B3A972400355FC7 /* LotteriaKiosk.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F9B4EC32B3A972400355FC7 /* LotteriaKiosk */ = {
+			isa = PBXGroup;
+			children = (
+				3FF8A3262B439C0E00856634 /* Model */,
+				3FF8A32C2B439E5900856634 /* Cells */,
+				3FF8A32B2B439E3700856634 /* Extension */,
+				3F9B4EC82B3A972400355FC7 /* ViewController.swift */,
+				3F9B4ECA2B3A972400355FC7 /* Main.storyboard */,
+				3F9B4ECD2B3A972700355FC7 /* Assets.xcassets */,
+				3F9B4ECF2B3A972700355FC7 /* LaunchScreen.storyboard */,
+				3F9B4ED22B3A972700355FC7 /* Info.plist */,
+				3F9B4EC42B3A972400355FC7 /* AppDelegate.swift */,
+				3F9B4EC62B3A972400355FC7 /* SceneDelegate.swift */,
+				3FF8A3142B3DA72000856634 /* CategoryViewController.swift */,
+			);
+			path = LotteriaKiosk;
+			sourceTree = "<group>";
+		};
+		3FF8A3262B439C0E00856634 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F6E184F2B3C40AF00107AF1 /* LotteriaMenu.swift */,
+				3F9B4EDE2B3AFD5100355FC7 /* HamburgerMenus.swift */,
+				3F6E18452B3C065C00107AF1 /* SideMenus.swift */,
+				3F6E18472B3C069100107AF1 /* DrinkMenus.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3FF8A32B2B439E3700856634 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3FF8A3272B439CED00856634 /* CollectionViewExtension.swift */,
+				3FF8A3292B439CFB00856634 /* TableViewExtension.swift */,
+				3FF8A3312B43C98500856634 /* CategoryBar.swift */,
+				3FF8A3332B43EF3400856634 /* RotatingImageView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		3FF8A32C2B439E5900856634 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3F9B4EE02B3AFEA400355FC7 /* MyCollectionViewCell.swift */,
+				3FF8A32F2B43B15500856634 /* CartCell.swift */,
+				3FF8A32D2B43A2E300856634 /* MyTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F9B4EC02B3A972400355FC7 /* LotteriaKiosk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F9B4ED52B3A972700355FC7 /* Build configuration list for PBXNativeTarget "LotteriaKiosk" */;
+			buildPhases = (
+				3F9B4EBD2B3A972400355FC7 /* Sources */,
+				3F9B4EBE2B3A972400355FC7 /* Frameworks */,
+				3F9B4EBF2B3A972400355FC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LotteriaKiosk;
+			productName = LotteriaKiosk;
+			productReference = 3F9B4EC12B3A972400355FC7 /* LotteriaKiosk.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F9B4EB92B3A972400355FC7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					3F9B4EC02B3A972400355FC7 = {
+						CreatedOnToolsVersion = 15.1;
+					};
+				};
+			};
+			buildConfigurationList = 3F9B4EBC2B3A972400355FC7 /* Build configuration list for PBXProject "LotteriaKiosk" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F9B4EB82B3A972400355FC7;
+			productRefGroup = 3F9B4EC22B3A972400355FC7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F9B4EC02B3A972400355FC7 /* LotteriaKiosk */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F9B4EBF2B3A972400355FC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F9B4ED12B3A972700355FC7 /* LaunchScreen.storyboard in Resources */,
+				3F9B4ECE2B3A972700355FC7 /* Assets.xcassets in Resources */,
+				3F9B4ECC2B3A972400355FC7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F9B4EBD2B3A972400355FC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FF8A3152B3DA72000856634 /* CategoryViewController.swift in Sources */,
+				3F9B4EE12B3AFEA400355FC7 /* MyCollectionViewCell.swift in Sources */,
+				3F9B4EC92B3A972400355FC7 /* ViewController.swift in Sources */,
+				3FF8A32A2B439CFB00856634 /* TableViewExtension.swift in Sources */,
+				3F9B4EC52B3A972400355FC7 /* AppDelegate.swift in Sources */,
+				3FF8A3282B439CED00856634 /* CollectionViewExtension.swift in Sources */,
+				3FF8A3302B43B15500856634 /* CartCell.swift in Sources */,
+				3FF8A32E2B43A2E300856634 /* MyTableViewCell.swift in Sources */,
+				3F6E18482B3C069200107AF1 /* DrinkMenus.swift in Sources */,
+				3FF8A3342B43EF3400856634 /* RotatingImageView.swift in Sources */,
+				3F6E18462B3C065C00107AF1 /* SideMenus.swift in Sources */,
+				3F9B4EDF2B3AFD5100355FC7 /* HamburgerMenus.swift in Sources */,
+				3F6E18502B3C40AF00107AF1 /* LotteriaMenu.swift in Sources */,
+				3F9B4EC72B3A972400355FC7 /* SceneDelegate.swift in Sources */,
+				3FF8A3322B43C98500856634 /* CategoryBar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3F9B4ECA2B3A972400355FC7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F9B4ECB2B3A972400355FC7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3F9B4ECF2B3A972700355FC7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F9B4ED02B3A972700355FC7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F9B4ED32B3A972700355FC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3F9B4ED42B3A972700355FC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F9B4ED62B3A972700355FC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76R226FG59;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LotteriaKiosk/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sparta.LotteriaKiosk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F9B4ED72B3A972700355FC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76R226FG59;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LotteriaKiosk/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sparta.LotteriaKiosk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F9B4EBC2B3A972400355FC7 /* Build configuration list for PBXProject "LotteriaKiosk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F9B4ED32B3A972700355FC7 /* Debug */,
+				3F9B4ED42B3A972700355FC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F9B4ED52B3A972700355FC7 /* Build configuration list for PBXNativeTarget "LotteriaKiosk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F9B4ED62B3A972700355FC7 /* Debug */,
+				3F9B4ED72B3A972700355FC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F9B4EB92B3A972400355FC7 /* Project object */;
+}
