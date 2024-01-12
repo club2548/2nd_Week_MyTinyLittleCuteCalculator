@@ -87,25 +87,13 @@
                                     <action selector="todoEdit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7bI-cq-vwE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Am1-CL-9vI">
-                                <rect key="frame" x="244" y="103" width="60" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="＋" cornerStyle="capsule">
-                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="40"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="editButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HQo-Ii-YZa"/>
-                                    <segue destination="4Da-Fs-Q2J" kind="presentation" id="eqd-Ui-Xwp"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="VSD-61-tnY"/>
                     <connections>
-                        <outlet property="editButton" destination="Q0x-ma-jZe" id="Cgn-sZ-mUw"/>
+                        <outlet property="deleteConfirmButton" destination="Q0x-ma-jZe" id="Cgn-sZ-mUw"/>
                         <outlet property="todoList" destination="DFR-zp-lO1" id="2rQ-KD-NAM"/>
                     </connections>
                 </viewController>
@@ -118,7 +106,7 @@
             <objects>
                 <viewController storyboardIdentifier="InputViewController" id="4Da-Fs-Q2J" customClass="InputViewController" customModule="MyTodoList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L8J-qG-BEY">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sdW-r5-rqp">

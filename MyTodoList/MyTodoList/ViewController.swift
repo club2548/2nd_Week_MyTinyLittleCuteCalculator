@@ -9,26 +9,13 @@ import UIKit
 // MARK: - ViewController에 todoList라는 tableView와 plusButton이라는 UIButton과 그 액션을 구성
 class ViewController: UIViewController {
     
-    @IBAction func editButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let destinationController = storyboard.instantiateViewController(withIdentifier: "InputViewController") as? InputViewController
-        else {
-            print("Error: Unable to instantiate InputViewController")
-            return
-        }
-        
-        if let PresentationController = destinationController.presentationController as? UISheetPresentationController {
-            PresentationController.detents = [.medium()]
-        }
-        self.present(destinationController, animated: true)
-    }
-    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var deleteConfirmButton: UIButton!
     @IBAction func todoEdit(_ sender: UIButton) {
         if self.todoList.isEditing {
-            self.editButton.setTitle("•••", for: .normal)
+            self.deleteConfirmButton.setTitle("•••", for: .normal)
             self.todoList.setEditing(false, animated: true)
         } else {
-            self.editButton.setTitle("Done", for: .normal)
+            self.deleteConfirmButton.setTitle("Done", for: .normal)
             self.todoList.setEditing(true, animated: true)
         }
     }
@@ -141,6 +128,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         inputViewController.selectedCategory = Controller.shared.categories[indexPath.section]
         inputViewController.selectedItem = Controller.shared.categories[indexPath.section].items[indexPath.row]
+        inputViewController.selectedIndexPath = indexPath
                 
         if let PresentationController = inputViewController.presentationController as? UISheetPresentationController {
             PresentationController.detents = [.medium()]

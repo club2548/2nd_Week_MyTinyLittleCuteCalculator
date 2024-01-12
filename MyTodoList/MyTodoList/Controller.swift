@@ -33,13 +33,19 @@ class Controller {
         }
     }
     
-    func updateCategory(_ updatedCategory: Category, updatedItem: Todo) {
+    func updateCategory(_ updatedCategory: Category, updatedItem: Todo, at indexPath: IndexPath) {
         if let index = categories.firstIndex(where: { $0.header == updatedCategory.header }) {
             categories[index].header = updatedCategory.header
-            if let itemIndex = categories[index].items.firstIndex(where: { $0.title == updatedItem.title }) {
-                categories[index].items[itemIndex] = updatedItem
-            } else {
-                categories[index].items.append(updatedItem)
+            
+            // 잘못된 부분. 수정이 되도 else만 실행되어서 append만 되고 있는 상황.. -> title(String)으로 찾지말고, id 등으로
+            if indexPath.row < categories[index].items.count {
+                categories[index].items[indexPath.row] = updatedItem
+                print("item Updated")
             }
+//            else {
+//                categories[index].items.append(updatedItem)
+//                print("item Added")
+//            }
         }
-    }}
+    }
+}

@@ -17,6 +17,7 @@ class InputViewController: UIViewController, UITextFieldDelegate {
     // 선택된 cell의 카테고리와 할 일을 저장하는 변수
     var selectedCategory : Category?
     var selectedItem : Todo?
+    var selectedIndexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,23 +68,24 @@ class InputViewController: UIViewController, UITextFieldDelegate {
         guard let newCategoryHeader = todoCategoryTextField.text, let newTaskTitle = todoTitleTextField.text else {
             return
         }
-        
-        // 수정할 항목이 선택된 항목이라고 가정
+        if let indexPath = selectedIndexPath {
+            // 수정할 항목이 선택된 항목이라고 가정
             if var selectedCategory = selectedCategory, var selectedItem = selectedItem {
                 // 수정된 헤더와 타이틀을 할당
                 selectedCategory.header = newCategoryHeader
                 selectedItem.title = newTaskTitle
-
+                
                 // Update the category and item in the shared Controller
-                Controller.shared.updateCategory(selectedCategory, updatedItem: selectedItem)
+                Controller.shared.updateCategory(selectedCategory, updatedItem: selectedItem, at: indexPath)
             }
-        
-        // Update the category and item in the shared Controller
-        
-        // Save the updated categories to UserDefaults
-        Controller.shared.saveUserDefaults(category: Controller.shared.categories)
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DataUpdated"), object: nil)
-        self.dismiss(animated: true, completion: nil)
+            
+            // Update the category and item in the shared Controller
+            
+            // Save the updated categories to UserDefaults
+            Controller.shared.saveUserDefaults(category: Controller.shared.categories)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DataUpdated"), object: nil)
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func todoCategoryInput(_ sender: UITextField) {
