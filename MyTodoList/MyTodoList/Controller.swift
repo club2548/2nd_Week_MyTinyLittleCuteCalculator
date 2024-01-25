@@ -42,10 +42,6 @@ class Controller {
                 categories[index].items[indexPath.row] = updatedItem
                 print("item Updated")
             }
-//            else {
-//                categories[index].items.append(updatedItem)
-//                print("item Added")
-//            }
         }
     }
 }

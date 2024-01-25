@@ -79,8 +79,6 @@ class InputViewController: UIViewController, UITextFieldDelegate {
                 Controller.shared.updateCategory(selectedCategory, updatedItem: selectedItem, at: indexPath)
             }
             
-            // Update the category and item in the shared Controller
-            
             // Save the updated categories to UserDefaults
             Controller.shared.saveUserDefaults(category: Controller.shared.categories)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "DataUpdated"), object: nil)

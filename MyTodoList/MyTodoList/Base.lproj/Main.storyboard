@@ -93,8 +93,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="VSD-61-tnY"/>
                     <connections>
-                        <outlet property="deleteConfirmButton" destination="Q0x-ma-jZe" id="Cgn-sZ-mUw"/>
                         <outlet property="todoList" destination="DFR-zp-lO1" id="2rQ-KD-NAM"/>
+                        <outlet property="todoListEditButton" destination="Q0x-ma-jZe" id="Cgn-sZ-mUw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

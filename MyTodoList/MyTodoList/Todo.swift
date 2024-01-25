@@ -7,6 +7,7 @@
 
 import Foundation
 
+// 각 Section의 title과 Todo를 배열로 가지는 struct 생성
 struct Category : Codable {
     var header : String? = nil
     var items : [Todo] = []
