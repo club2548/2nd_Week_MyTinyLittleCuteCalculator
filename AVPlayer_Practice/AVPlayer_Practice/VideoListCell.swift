@@ -12,7 +12,7 @@ import SnapKit
 class VideoListCell : UITableViewCell {
     static let reuseIdentifier = "VidioListCell"
     
-    var thumnailImage : UIImage? = nil
+    var thumbnailImageView : UIImageView!
     
     let duration : UILabel = {
         let label = UILabel()
@@ -41,6 +41,8 @@ class VideoListCell : UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        print("Cell registered")
+        thumbnailImageView = UIImageView()
         addSubviews()
         autoLayout()
     }
@@ -50,8 +52,7 @@ class VideoListCell : UITableViewCell {
     }
     
     private func addSubviews() {
-        let thumnailImageView = UIImageView()
-        thumnailImageView.image = thumnailImage ?? UIImage(named: "playButton")
+//        addSubview(thumbnailImageView)
         contentView.addSubview(duration)
         contentView.addSubview(title)
         contentView.addSubview(author)
@@ -60,45 +61,56 @@ class VideoListCell : UITableViewCell {
     }
     
     private func autoLayout() {
-        if let thumnailImage = thumnailImage {
-            let thumnailImageView = UIImageView(image: thumnailImage)
-            addSubview(thumnailImageView)
-            
-                thumnailImageView.snp.makeConstraints() { make in
-                    make.top.leading.trailing.equalToSuperview()
-                make.height.equalTo(thumnailImage.cgImage?.width ?? 0).multipliedBy(9/16)
-            }
-            
-            duration.snp.makeConstraints() { make in
-                make.bottom.equalTo(thumnailImageView).offset(-8)
-                make.trailing.equalTo(thumnailImageView).offset(8)
-            }
-            
-            title.snp.makeConstraints() { make in
-                make.top.equalTo(duration.snp.bottom).offset(10)
-                make.leading.equalToSuperview().offset(8)
-            }
-                        
-            author.snp.makeConstraints() { make in
-                make.top.equalTo(title.snp.bottom).offset(4)
-                make.leading.equalToSuperview().offset(8)
-            }
-            
-            views.snp.makeConstraints() { make in
-                make.top.equalTo(title.snp.bottom).offset(4)
-                make.leading.equalTo(author.snp.trailing).offset(8)
-            }
-            
-            uploadTime.snp.makeConstraints() { make in
-                make.top.equalTo(title.snp.bottom).offset(4)
-                make.leading.equalTo(views.snp.trailing).offset(8)
-                make.trailing.equalToSuperview().offset(-8)
+        thumbnailImageView.snp.makeConstraints() { make in
+            make.top.leading.trailing.equalToSuperview()
+            make.height.equalTo(thumbnailImageView).multipliedBy(9/16)
+        }
+        
+        duration.snp.makeConstraints() { make in
+            make.bottom.equalTo(thumbnailImageView).offset(-8)
+            make.trailing.equalTo(thumbnailImageView).offset(8)
+        }
+        
+        title.snp.makeConstraints() { make in
+            make.top.equalTo(duration.snp.bottom).offset(10)
+            make.leading.equalToSuperview().offset(8)
+        }
+        
+        author.snp.makeConstraints() { make in
+            make.top.equalTo(title.snp.bottom).offset(4)
+            make.leading.equalToSuperview().offset(8)
+        }
+        
+        views.snp.makeConstraints() { make in
+            make.top.equalTo(title.snp.bottom).offset(4)
+            make.leading.equalTo(author.snp.trailing).offset(8)
+        }
+        
+        uploadTime.snp.makeConstraints() { make in
+            make.top.equalTo(title.snp.bottom).offset(4)
+            make.leading.equalTo(views.snp.trailing).offset(8)
+            make.trailing.equalToSuperview().offset(-8)
+        }
+    }
+    
+    func setThumbnail(imageURL: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: imageURL), let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self?.thumbnailImageView.contentMode = .scaleAspectFill
+                    self?.thumbnailImageView.image = image
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self?.thumbnailImageView.contentMode = .scaleAspectFill
+                    self?.thumbnailImageView.tintColor = .lightGray
+                    self?.thumbnailImageView.image = UIImage(named: "playButton")
+                }
             }
         }
     }
     
-    func setVideoList(thumnailVideoImage: UIImage, videoDuration: String, videoTitle: String, videoAuthor: String, videoViews: String, videoUploadTime: String) {
-        thumnailImage = thumnailVideoImage
+    func setVideoList(videoDuration: String, videoTitle: String, videoAuthor: String, videoViews: String, videoUploadTime: String) {
         duration.text = videoDuration
         title.text = videoTitle
         author.text = videoAuthor
