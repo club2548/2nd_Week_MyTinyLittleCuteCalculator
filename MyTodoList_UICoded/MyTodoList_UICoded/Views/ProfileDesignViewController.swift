@@ -69,6 +69,10 @@ class ProfileDesignViewController: UIViewController {
         return text
     }()
     
+    let userInfoView : UIView = {
+        let userinfo = UIView()
+        return userinfo
+    }()
     
     let titleLabel: UILabel = {
         let text = UILabel()
@@ -123,9 +127,17 @@ class ProfileDesignViewController: UIViewController {
         return button
     }()
     
-    let postCollectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
-        collectionView.backgroundColor = .blue
+    lazy var postCollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let itemSizeWidthHeight = (UIScreen.main.bounds.width - 4) / 3
+        layout.itemSize = CGSize(width: itemSizeWidthHeight, height: itemSizeWidthHeight)
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 2
+        layout.minimumInteritemSpacing = 0
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(PostCollectionViewCell.self, forCellWithReuseIdentifier: PostCollectionViewCell.reuseIdentifier)
         return collectionView
     }()
 
@@ -138,10 +150,13 @@ class ProfileDesignViewController: UIViewController {
     }
     
     private func addSubViews() {
-        self.view.addSubViews([userName, menuButton, userPic, postsLabel, postsNum, followersLabel, followersNum, followingLabel, followingNum, titleLabel, descriptionLabel, homepageLabel, followButton, messageButton, showMoreButton, postCollectionView])
-        postCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: PostCollectionViewCell.reuseIdentifier)
-        postCollectionView.delegate = self
-        postCollectionView.dataSource = self
+        self.view.addSubViews([userName, menuButton, userPic, postsLabel, postsNum, followersLabel, followersNum, followingLabel, followingNum, titleLabel, descriptionLabel, homepageLabel, followButton, messageButton, showMoreButton, postCollectionView, userInfoView])
+        userInfoView.addSubview(postsLabel)
+        userInfoView.addSubview(postsNum)
+        userInfoView.addSubview(followersNum)
+        userInfoView.addSubview(followersLabel)
+        userInfoView.addSubview(followingNum)
+        userInfoView.addSubview(followingLabel)
     }
     
     private func autoLayout() {
@@ -164,40 +179,48 @@ class ProfileDesignViewController: UIViewController {
             userPic.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16)
         ])  // 88 * 88
         
+        userInfoView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            userInfoView.leadingAnchor.constraint(equalTo: userPic.trailingAnchor, constant: 55),
+            userInfoView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -56),
+            userInfoView.centerYAnchor.constraint(equalTo: userPic.centerYAnchor, constant: 0),
+            userInfoView.heightAnchor.constraint(equalToConstant: 41)
+        ])
+        
         followingLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            followingLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -28),
-            followingLabel.topAnchor.constraint(equalTo: followingNum.bottomAnchor, constant: 0)
+            followingLabel.centerXAnchor.constraint(equalTo: userInfoView.leadingAnchor, constant: 0),
+            followingLabel.bottomAnchor.constraint(equalTo: userInfoView.bottomAnchor, constant: 0)
         ])
         
         followingNum.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            followingNum.centerXAnchor.constraint(equalTo: followingLabel.centerXAnchor, constant: 0),
-            followingNum.topAnchor.constraint(equalTo: userName.bottomAnchor, constant: 37)
+            followingNum.centerXAnchor.constraint(equalTo: userInfoView.leadingAnchor, constant: 0),
+            followingNum.topAnchor.constraint(equalTo: userInfoView.topAnchor, constant: 0)
         ])
         
         postsLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            postsLabel.leadingAnchor.constraint(equalTo: userPic.trailingAnchor, constant: 41),
-            postsLabel.topAnchor.constraint(equalTo: followingLabel.topAnchor, constant: 0)
+            postsLabel.centerXAnchor.constraint(equalTo: userInfoView.centerXAnchor, constant: 0),
+            postsLabel.bottomAnchor.constraint(equalTo: userInfoView.bottomAnchor, constant: 0)
         ])
         
         postsNum.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            postsNum.centerXAnchor.constraint(equalTo: postsLabel.centerXAnchor, constant: 0),
-            postsNum.topAnchor.constraint(equalTo: followersNum.topAnchor, constant: 0)
+            postsNum.centerXAnchor.constraint(equalTo: userInfoView.centerXAnchor, constant: 0),
+            postsNum.topAnchor.constraint(equalTo: userInfoView.topAnchor, constant: 0)
         ])
         
         followersLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            followersLabel.centerXAnchor.constraint(equalTo: postsLabel.centerXAnchor, constant: (followingLabel.centerXAnchor.constraint(equalTo: postsLabel.centerXAnchor).constant) / 2),
-            followersLabel.topAnchor.constraint(equalTo: followingLabel.topAnchor, constant: 0)
+            followersLabel.centerXAnchor.constraint(equalTo: userInfoView.trailingAnchor, constant: 0),
+            followersLabel.bottomAnchor.constraint(equalTo: userInfoView.bottomAnchor, constant: 0)
         ])
         
         followersNum.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            followersNum.centerXAnchor.constraint(equalTo: followersLabel.centerXAnchor, constant: 0),
-            followersNum.topAnchor.constraint(equalTo: followingNum.topAnchor, constant: 0)
+            followersNum.centerXAnchor.constraint(equalTo: userInfoView.trailingAnchor, constant: 0),
+            followersNum.topAnchor.constraint(equalTo: userInfoView.topAnchor, constant: 0)
         ])
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -253,10 +276,18 @@ class ProfileDesignViewController: UIViewController {
         
     }
     
-    let listOfPic = ["picture-0", "picturt-1", "picture-2", "picture-3", "picture-4", "picture-5", "picture-6"]
+    let listOfPic = [
+        UIImage(named: "picture-0"),
+        UIImage(named: "picture-1"),
+        UIImage(named: "picture-2"),
+        UIImage(named: "picture-3"),
+        UIImage(named: "picture-4"),
+        UIImage(named: "picture-5"),
+        UIImage(named: "picture-6")
+    ]
 }
 
-extension ProfileDesignViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ProfileDesignViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -265,24 +296,12 @@ extension ProfileDesignViewController : UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostCollectionViewCell.reuseIdentifier, for: indexPath) as! PostCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostCollectionViewCell.reuseIdentifier, for: indexPath) as? PostCollectionViewCell else { return UICollectionViewCell() }
         
         let nameOfPicture = listOfPic[indexPath.row]
-        let picture = UIImage(named: nameOfPicture)
-        cell.setPostCollectionViewCell(thumbnailImage: picture!)
+        print("\(String(describing: nameOfPicture))")
+        cell.setPostCollectionViewCell(thumbnailImage: nameOfPicture!)
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 300, height: 300)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
     }
 }
 

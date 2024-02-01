@@ -112,6 +112,20 @@ extension TodoListViewController : UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        todoListTable.deselectRow(at: indexPath, animated: true)
+        let todolistItem = todosCoreData[indexPath.row]
+        let createTodoViewController = CreateTodoViewController()
+        let transitionDelegate = CustomTransitioningDelegate()
+        createTodoViewController.transitioningDelegate = transitionDelegate
+        createTodoViewController.modalPresentationStyle = .custom
+        
+        createTodoViewController.delegate = self
+        createTodoViewController.titleTextfield.text = todolistItem.itemTitle
+        createTodoViewController.descriptionTextfield.text = todolistItem.itemDescription
+        present(createTodoViewController, animated: true)
+    }
+    
     
 }
 
@@ -143,6 +157,7 @@ extension TodoListViewController : CreateTodoDelegate {
         newItem.itemId = UUID()
         do {
             try context.save()
+            getAllItems()
         }
         catch {
             // error
@@ -153,6 +168,7 @@ extension TodoListViewController : CreateTodoDelegate {
         context.delete(item)
         do {
             try context.save()
+            getAllItems()
         }
         catch {
             // error
@@ -166,6 +182,7 @@ extension TodoListViewController : CreateTodoDelegate {
         item.itemModityDate = Date()
         do {
             try context.save()
+            getAllItems()
         }
         catch {
             // error
@@ -174,8 +191,11 @@ extension TodoListViewController : CreateTodoDelegate {
     
     func updateComplete(item: TodoListItem, isCompleted : Bool) {
         item.itemIsCompleted = isCompleted
+        print("edit isCompleted")
         do {
             try context.save()
+            getAllItems()
+            print("Data updated")
         }
         catch {
             // error
