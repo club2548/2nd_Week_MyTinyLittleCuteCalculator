@@ -20,12 +20,6 @@ class TodoViewController: UIViewController {
         return imageView
     }()
     
-//    let mainImageView: UIImageView {
-//        let imageView = UIImageView()
-//        imageView.image = UIImage(systemName: "image")
-//        return imageView
-//    }
-    
     let todoButton: UIButton = {
         let button = UIButton()
         button.setTitle("할 일 확인하기", for: .normal)
@@ -38,32 +32,47 @@ class TodoViewController: UIViewController {
         button.setImage(UIImage(systemName: "cat"), for: .normal)
         return button
     }()
+    
+    let profileDesignButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("ProfileDesignViewController", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         addSubViews()
         makeAutoLayout()
-        
+        setupInteraction()
     }
     
-//    private func setupInteraction() {
-//        todoButton.addTarget(self, action: #selector(touchTodoButton()), for: .touchUpInside)
-//        dogButton.addTarget(self, action: #selector(touchDogButton()), for: .touchUpInside)
-//    }
+    private func setupInteraction() {
+        todoButton.addTarget(self, action: #selector(touchTodoButton), for: .touchUpInside)
+        dogButton.addTarget(self, action: #selector(touchDogButton), for: .touchUpInside)
+        profileDesignButton.addTarget(self, action: #selector(touchProfileDesignButton), for: .touchUpInside)
+    }
     
     @objc func touchTodoButton() {
-        
+        self.navigationController?.pushViewController(TodoListViewController(), animated: true)
     }
     
     @objc func touchDogButton() {
         
     }
     
+    @objc func touchProfileDesignButton() {
+        let nextViewController = ProfileDesignViewController()
+        nextViewController.modalPresentationStyle = .popover
+        self.present(nextViewController, animated: true)
+    }
+    
     private func addSubViews() {
         view.addSubview(mainImageView)
         view.addSubview(todoButton)
         view.addSubview(dogButton)
+        view.addSubview(profileDesignButton)
     }
     
     // 각 subView들에 대한 AutoLayout을 설정하는 메서드
@@ -98,6 +107,14 @@ class TodoViewController: UIViewController {
             dogButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0),
             dogButton.widthAnchor.constraint(equalToConstant: 100),
             dogButton.heightAnchor.constraint(equalToConstant: 100)
+        ])
+        
+        profileDesignButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            profileDesignButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 0),
+            profileDesignButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 100),
+//            profileDesignButton.widthAnchor.constraint(equalToConstant: 100),
+//            profileDesignButton.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
 }
